@@ -1,23 +1,22 @@
-/// <summary>
-/// Объявление класса CLogic
+п»ї/// <summary>
+/// РћР±СЉСЏРІР»РµРЅРёРµ РєР»Р°СЃСЃР° CLogic
 /// </summary>
 #ifndef __LOGIC_H__
 #define __LOGIC_H__
 
 #include <cstdint>
 
+#include "global.h"
 #include "field.h"
 
-#define PLAYERS 2
-
 /// <summary>
-/// Класс игровой логики
+/// РљР»Р°СЃСЃ РёРіСЂРѕРІРѕР№ Р»РѕРіРёРєРё
 /// </summary>
 class CLogic
 {
 public:
     /// <summary>
-    /// Структура для описания координаты курсора
+    /// РЎС‚СЂСѓРєС‚СѓСЂР° РґР»СЏ РѕРїРёСЃР°РЅРёСЏ РєРѕРѕСЂРґРёРЅР°С‚С‹ РєСѓСЂСЃРѕСЂР°
     /// </summary>
     struct TCursor
     {
@@ -27,29 +26,29 @@ public:
 
 public:
     /// <summary>
-    /// Проверка окончания игры
+    /// РџСЂРѕРІРµСЂРєР° РѕРєРѕРЅС‡Р°РЅРёСЏ РёРіСЂС‹
     /// </summary>
-    /// <param name="cursorX">[in] Позиция курсора по X</param>
-    /// <param name="cursorY">[in] Позиция курсора по Y</param>
-    /// <returns>Возращает true, если нельзя сделать больше ходов и false в ином случае</returns>
-    /// <remarks>Игра считает оконченной, если все ячейки открыты или нельзя сделать ход из заданной позиции</remarks>
+    /// <param name="cursorX">[in] РџРѕР·РёС†РёСЏ РєСѓСЂСЃРѕСЂР° РїРѕ X</param>
+    /// <param name="cursorY">[in] РџРѕР·РёС†РёСЏ РєСѓСЂСЃРѕСЂР° РїРѕ Y</param>
+    /// <returns>Р’РѕР·СЂР°С‰Р°РµС‚ true, РµСЃР»Рё РЅРµР»СЊР·СЏ СЃРґРµР»Р°С‚СЊ Р±РѕР»СЊС€Рµ С…РѕРґРѕРІ Рё false РІ РёРЅРѕРј СЃР»СѓС‡Р°Рµ</returns>
+    /// <remarks>РРіСЂР° СЃС‡РёС‚Р°РµС‚ РѕРєРѕРЅС‡РµРЅРЅРѕР№, РµСЃР»Рё РІСЃРµ СЏС‡РµР№РєРё РѕС‚РєСЂС‹С‚С‹ РёР»Рё РЅРµР»СЊР·СЏ СЃРґРµР»Р°С‚СЊ С…РѕРґ РёР· Р·Р°РґР°РЅРЅРѕР№ РїРѕР·РёС†РёРё</remarks>
     bool IsEndGame(const uint8_t cursorX, const uint8_t cursorY);
 
 private:
     /// <summary>
-    /// Счёт очков
+    /// РЎС‡С‘С‚ РѕС‡РєРѕРІ
     /// </summary>
     uint16_t m_score[PLAYERS];
 
     uint8_t m_activePlayer = 0;
 
     /// <summary>
-    /// Игровое поле
+    /// РРіСЂРѕРІРѕРµ РїРѕР»Рµ
     /// </summary>
     CField m_field;
 
     /// <summary>
-    /// Положение игрового курсора
+    /// РџРѕР»РѕР¶РµРЅРёРµ РёРіСЂРѕРІРѕРіРѕ РєСѓСЂСЃРѕСЂР°
     /// </summary>
     TCursor m_cursor = {FIELD_SIZE / 2, FIELD_SIZE / 2};
 };

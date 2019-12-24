@@ -1,4 +1,4 @@
-/// <summary>
+﻿/// <summary>
 /// Объявление класса CField
 /// </summary>
 #ifndef __FIELD_H__
@@ -7,20 +7,7 @@
 #include <cstdint>
 #include <memory>   // shared_ptr
 
-/// <summary>
-/// Размер поля
-/// </summary>
-#define FIELD_SIZE 8
-
-/// <summary>
-/// Максимальное абсолютное значение ячейки
-/// </summary>
-#define MAX_VALUE  11
-
-/// <summary>
-/// Значение открытой ячейки
-/// </summary>
-#define OPENED_VALUE 0
+#include "global.h"
 
 
 using namespace std;
