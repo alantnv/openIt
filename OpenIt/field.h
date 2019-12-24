@@ -54,7 +54,7 @@ public:
     /// <param name="value">[out] Количество полученных баллов</param>
     /// <returns>Возвращает true, если ячейка открыта успешно или false в случае ошибки
     /// (недопустимая координата или ячейка уже открыта)</returns>
-    /// <remarks>Параметр <param name="value"></param> может принимать произольное значение
+    /// <remarks>Параметр <param name="value">value</param> может принимать произольное значение
     /// и должен быть проигнорирован, если функция завершилась с ошибкой</remarks>
     bool OpenCell(const uint8_t posX, const uint8_t posY, TFieldItem& value);
 
